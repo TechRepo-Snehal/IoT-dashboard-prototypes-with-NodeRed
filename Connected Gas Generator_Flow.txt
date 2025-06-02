@@ -1,0 +1,720 @@
+[
+    {
+        "id": "65a22dad2a51adc7",
+        "type": "tab",
+        "label": "Connected Gas Generator",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "028b0c4d0fe4758d",
+        "type": "ui_gauge",
+        "z": "65a22dad2a51adc7",
+        "name": "Temp",
+        "group": "645b4bdcbfa9e638",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temp",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 530,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f226301534fd7534",
+        "type": "function",
+        "z": "65a22dad2a51adc7",
+        "name": "function 4",
+        "func": "var a = msg.payload\nmsg.payload = Math.ceil(a);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "028b0c4d0fe4758d",
+                "e607a964d8d0bb1a",
+                "b03a234b0ac80199",
+                "89373e888e5cd2bc"
+            ]
+        ]
+    },
+    {
+        "id": "060e7c20fad796a8",
+        "type": "function",
+        "z": "65a22dad2a51adc7",
+        "name": "function 5",
+        "func": "var a = msg.payload\nmsg.payload = Math.ceil(a);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 460,
+        "wires": [
+            [
+                "52716f11c39a3f19",
+                "9a2e5679510b14ea",
+                "e6866f41b0c32614"
+            ]
+        ]
+    },
+    {
+        "id": "84cf72895c93bbf8",
+        "type": "function",
+        "z": "65a22dad2a51adc7",
+        "name": "function 6",
+        "func": "var a = msg.payload\nmsg.payload = Math.ceil(a);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 540,
+        "wires": [
+            [
+                "5b37f2e53fa30acd",
+                "06ad0e7ec4be78a9",
+                "4d62174bf9f29bb8"
+            ]
+        ]
+    },
+    {
+        "id": "52716f11c39a3f19",
+        "type": "ui_gauge",
+        "z": "65a22dad2a51adc7",
+        "name": "Pressure",
+        "group": "dc45637c9c9ef955",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Pressure",
+        "label": "C",
+        "format": "{{value}}",
+        "min": "100",
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 740,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5b37f2e53fa30acd",
+        "type": "ui_gauge",
+        "z": "65a22dad2a51adc7",
+        "name": "Compressor RPM",
+        "group": "8e57b20517591a87",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Compressor RPM",
+        "label": "C",
+        "format": "{{value}}",
+        "min": "500",
+        "max": "1500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 790,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "e607a964d8d0bb1a",
+        "type": "ui_chart",
+        "z": "65a22dad2a51adc7",
+        "name": "Temp",
+        "group": "645b4bdcbfa9e638",
+        "order": 2,
+        "width": 5,
+        "height": 4,
+        "label": "Temp",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 530,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a2e5679510b14ea",
+        "type": "ui_chart",
+        "z": "65a22dad2a51adc7",
+        "name": "Pressure",
+        "group": "dc45637c9c9ef955",
+        "order": 2,
+        "width": "5",
+        "height": "4",
+        "label": "Pressure",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "100",
+        "ymax": "1000",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 740,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06ad0e7ec4be78a9",
+        "type": "ui_chart",
+        "z": "65a22dad2a51adc7",
+        "name": "Compressor RPM",
+        "group": "8e57b20517591a87",
+        "order": 2,
+        "width": 5,
+        "height": 4,
+        "label": "Compressor RPM",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "500",
+        "ymax": "1500",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d844c98ed8e3ed3c",
+        "type": "ui_text",
+        "z": "65a22dad2a51adc7",
+        "group": "d2f4807381052fc3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "ABC Laboratories :  Generator-1",
+        "label": "ABC Laboratories :  Generator-1",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 310,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b03a234b0ac80199",
+        "type": "function",
+        "z": "65a22dad2a51adc7",
+        "name": "function 7",
+        "func": "var a = msg.payload\nif (a>50)\n{\nmsg.payload = 1;\n}\nelse\n{\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "838be516a5ac18fc"
+            ]
+        ]
+    },
+    {
+        "id": "838be516a5ac18fc",
+        "type": "rbe",
+        "z": "65a22dad2a51adc7",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 550,
+        "y": 300,
+        "wires": [
+            [
+                "65a3e6d6ec3cace7"
+            ]
+        ]
+    },
+    {
+        "id": "65a3e6d6ec3cace7",
+        "type": "function",
+        "z": "65a22dad2a51adc7",
+        "name": "function 8",
+        "func": "var a = msg.payload\nif (a == 1)\n{\nmsg.payload = \"Critical temp reached\";\n}\nelse\n{\n    msg.payload = \"Critical temp reduced\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 300,
+        "wires": [
+            [
+                "cfc1a349a391698b"
+            ]
+        ]
+    },
+    {
+        "id": "cfc1a349a391698b",
+        "type": "ui_toast",
+        "z": "65a22dad2a51adc7",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Notification",
+        "x": 910,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "89373e888e5cd2bc",
+        "type": "function",
+        "z": "65a22dad2a51adc7",
+        "name": "function 9",
+        "func": "var a = msg.payload\nif (a>50)\n{\nmsg.payload = \"Generator-1 temp is:\" + a ;\n}\nelse {return}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 240,
+        "wires": [
+            [
+                "6d6ea68dd6104b4c"
+            ]
+        ]
+    },
+    {
+        "id": "6d6ea68dd6104b4c",
+        "type": "ui_text_input",
+        "z": "65a22dad2a51adc7",
+        "name": "Critical Alerts",
+        "label": "",
+        "tooltip": "",
+        "group": "d2f4807381052fc3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 910,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6866f41b0c32614",
+        "type": "function",
+        "z": "65a22dad2a51adc7",
+        "name": "function 10",
+        "func": "var a = msg.payload\nif (a>500)\n{\nmsg.payload = \"Generator-1 pressure is:\" + a ;\n}\nelse {return}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 460,
+        "wires": [
+            [
+                "15b285c75ba5a5d9"
+            ]
+        ]
+    },
+    {
+        "id": "15b285c75ba5a5d9",
+        "type": "ui_text_input",
+        "z": "65a22dad2a51adc7",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "d2f4807381052fc3",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 920,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d62174bf9f29bb8",
+        "type": "function",
+        "z": "65a22dad2a51adc7",
+        "name": "function 11",
+        "func": "var a = msg.payload\nif (a>1000)\n{\nmsg.payload = \"Generator-1 compressor RPM is:\" + a ;\n}\nelse {return}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 540,
+        "wires": [
+            [
+                "e44ae22012319f4c"
+            ]
+        ]
+    },
+    {
+        "id": "e44ae22012319f4c",
+        "type": "ui_text_input",
+        "z": "65a22dad2a51adc7",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "d2f4807381052fc3",
+        "order": 5,
+        "width": "6",
+        "height": "1",
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 920,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed5f273a48db850d",
+        "type": "ui_text",
+        "z": "65a22dad2a51adc7",
+        "group": "d2f4807381052fc3",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "Critical Alerts",
+        "label": "Critical Alerts",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 550,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a32c12ad884fa794",
+        "type": "inject",
+        "z": "65a22dad2a51adc7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "5f43ec7d3952e25d"
+            ]
+        ]
+    },
+    {
+        "id": "5f43ec7d3952e25d",
+        "type": "random",
+        "z": "65a22dad2a51adc7",
+        "name": "Pressure",
+        "low": "100",
+        "high": "1000",
+        "inte": "true",
+        "property": "payload",
+        "x": 380,
+        "y": 460,
+        "wires": [
+            [
+                "060e7c20fad796a8"
+            ]
+        ]
+    },
+    {
+        "id": "763d0748f031ea06",
+        "type": "inject",
+        "z": "65a22dad2a51adc7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 540,
+        "wires": [
+            [
+                "97474638aa1bda6b"
+            ]
+        ]
+    },
+    {
+        "id": "97474638aa1bda6b",
+        "type": "random",
+        "z": "65a22dad2a51adc7",
+        "name": "Compressor RPM",
+        "low": "500",
+        "high": "1500",
+        "inte": "true",
+        "property": "payload",
+        "x": 390,
+        "y": 540,
+        "wires": [
+            [
+                "84cf72895c93bbf8"
+            ]
+        ]
+    },
+    {
+        "id": "a64521ff913b4b42",
+        "type": "inject",
+        "z": "65a22dad2a51adc7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "11bc35c312691987"
+            ]
+        ]
+    },
+    {
+        "id": "11bc35c312691987",
+        "type": "random",
+        "z": "65a22dad2a51adc7",
+        "name": "Temp",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "f226301534fd7534"
+            ]
+        ]
+    },
+    {
+        "id": "645b4bdcbfa9e638",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "1b8395ef4589341b",
+        "order": 2,
+        "disp": false,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dc45637c9c9ef955",
+        "type": "ui_group",
+        "name": "Pressure",
+        "tab": "1b8395ef4589341b",
+        "order": 4,
+        "disp": false,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8e57b20517591a87",
+        "type": "ui_group",
+        "name": "Compressor RPM",
+        "tab": "1b8395ef4589341b",
+        "order": 6,
+        "disp": false,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d2f4807381052fc3",
+        "type": "ui_group",
+        "name": "ABC Laboratory",
+        "tab": "1b8395ef4589341b",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1b8395ef4589341b",
+        "type": "ui_tab",
+        "name": "Gas Generator OEM",
+        "icon": "",
+        "disabled": false,
+        "hidden": false
+    }
+]

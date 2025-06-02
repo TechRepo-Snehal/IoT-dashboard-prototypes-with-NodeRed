@@ -1,0 +1,211 @@
+[
+    {
+        "id": "69da8a3145c62d67",
+        "type": "tab",
+        "label": "To Datacake",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ebc6d06ddf40ee1e",
+        "type": "random",
+        "z": "69da8a3145c62d67",
+        "name": "Water Level",
+        "low": "20",
+        "high": "50",
+        "inte": "true",
+        "property": "payload",
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "810135f778c2798d"
+            ]
+        ]
+    },
+    {
+        "id": "73d2b667bc15d281",
+        "type": "debug",
+        "z": "69da8a3145c62d67",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f454daa968af353f",
+        "type": "inject",
+        "z": "69da8a3145c62d67",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "ebc6d06ddf40ee1e"
+            ]
+        ]
+    },
+    {
+        "id": "810135f778c2798d",
+        "type": "datacake-out",
+        "z": "69da8a3145c62d67",
+        "name": "DataCake Node",
+        "datacakeConfiguration": "5b35ff8398238e1b",
+        "deviceId": "bc39094e-d3a5-4793-870e-4670f0ff543a",
+        "fieldName": "TEMP",
+        "productSlug": "test-device-15",
+        "x": 550,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f808797fee93852b",
+        "type": "random",
+        "z": "69da8a3145c62d67",
+        "name": "Temperature",
+        "low": "30",
+        "high": "70",
+        "inte": "true",
+        "property": "payload",
+        "x": 390,
+        "y": 180,
+        "wires": [
+            [
+                "bf3f9a72d4069247"
+            ]
+        ]
+    },
+    {
+        "id": "acfe24efb5da3506",
+        "type": "inject",
+        "z": "69da8a3145c62d67",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "f808797fee93852b"
+            ]
+        ]
+    },
+    {
+        "id": "bf3f9a72d4069247",
+        "type": "datacake-out",
+        "z": "69da8a3145c62d67",
+        "name": "DataCake Node",
+        "datacakeConfiguration": "5b35ff8398238e1b",
+        "deviceId": "bc39094e-d3a5-4793-870e-4670f0ff543a",
+        "fieldName": "HUMIDITY",
+        "productSlug": "test-device-15",
+        "x": 550,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "7d57ee4d4b7adc18",
+        "type": "random",
+        "z": "69da8a3145c62d67",
+        "name": "Battery",
+        "low": "30",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 380,
+        "y": 240,
+        "wires": [
+            [
+                "02d63b1457947833",
+                "73d2b667bc15d281"
+            ]
+        ]
+    },
+    {
+        "id": "442844fa875de314",
+        "type": "inject",
+        "z": "69da8a3145c62d67",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "7d57ee4d4b7adc18"
+            ]
+        ]
+    },
+    {
+        "id": "02d63b1457947833",
+        "type": "datacake-out",
+        "z": "69da8a3145c62d67",
+        "name": "DataCake Node",
+        "datacakeConfiguration": "5b35ff8398238e1b",
+        "deviceId": "bc39094e-d3a5-4793-870e-4670f0ff543a",
+        "fieldName": "BATTERY",
+        "productSlug": "test-device-15",
+        "x": 550,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5b35ff8398238e1b",
+        "type": "datacake-configuration",
+        "apiKey": "aaec9507db3422ad17599b51cc02d7c07b30adb4",
+        "workspaceId": "6b42ce9a-229e-4334-a733-3854ae3f118e",
+        "workspaceName": "No-code IoT"
+    }
+]

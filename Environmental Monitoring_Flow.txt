@@ -1,0 +1,720 @@
+[
+    {
+        "id": "730b109011b4da6d",
+        "type": "tab",
+        "label": "Environmental Monitoring - 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "032dd5f2ae98afb8",
+        "type": "ui_gauge",
+        "z": "730b109011b4da6d",
+        "name": "Water Level",
+        "group": "26dd59740e53db95",
+        "order": 1,
+        "width": "5",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Water Level",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7b8ebc5b960d5f51",
+        "type": "function",
+        "z": "730b109011b4da6d",
+        "name": "function 36",
+        "func": "var a = msg.payload\nmsg.payload = Math.ceil(a);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "032dd5f2ae98afb8",
+                "9f15234c0d5f243f",
+                "a3fddaafacd154a8",
+                "ccd8a4f32bf42ade"
+            ]
+        ]
+    },
+    {
+        "id": "1b17bca21bea07c5",
+        "type": "function",
+        "z": "730b109011b4da6d",
+        "name": "function 37",
+        "func": "var a = msg.payload\nmsg.payload = Math.ceil(a);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 520,
+        "wires": [
+            [
+                "a00bd4a6db140d1f",
+                "9948f056612db093",
+                "4a737d82400320f9"
+            ]
+        ]
+    },
+    {
+        "id": "7356d7afcf7de853",
+        "type": "function",
+        "z": "730b109011b4da6d",
+        "name": "function 38",
+        "func": "var a = msg.payload\nmsg.payload = Math.ceil(a);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 600,
+        "wires": [
+            [
+                "99dd31479805799d",
+                "a7be5bef9522804b",
+                "e9a38f487cf23083"
+            ]
+        ]
+    },
+    {
+        "id": "a00bd4a6db140d1f",
+        "type": "ui_gauge",
+        "z": "730b109011b4da6d",
+        "name": "Water Velocity",
+        "group": "fb3a8fce250db418",
+        "order": 1,
+        "width": "5",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Water Velocity",
+        "label": "C",
+        "format": "{{value}}",
+        "min": "100",
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 880,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "99dd31479805799d",
+        "type": "ui_gauge",
+        "z": "730b109011b4da6d",
+        "name": "Water Flow",
+        "group": "7d78b447a13eca56",
+        "order": 1,
+        "width": "5",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Water Flow",
+        "label": "C",
+        "format": "{{value}}",
+        "min": "500",
+        "max": "1500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 890,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "9f15234c0d5f243f",
+        "type": "ui_chart",
+        "z": "730b109011b4da6d",
+        "name": "Water Level",
+        "group": "26dd59740e53db95",
+        "order": 2,
+        "width": 5,
+        "height": 4,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9948f056612db093",
+        "type": "ui_chart",
+        "z": "730b109011b4da6d",
+        "name": "Water Velocity",
+        "group": "fb3a8fce250db418",
+        "order": 2,
+        "width": "5",
+        "height": "4",
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "100",
+        "ymax": "1000",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 880,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a7be5bef9522804b",
+        "type": "ui_chart",
+        "z": "730b109011b4da6d",
+        "name": "Water Flow",
+        "group": "7d78b447a13eca56",
+        "order": 2,
+        "width": 5,
+        "height": 4,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "500",
+        "ymax": "1500",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3fddaafacd154a8",
+        "type": "function",
+        "z": "730b109011b4da6d",
+        "name": "function 39",
+        "func": "var a = msg.payload\nif (a>50)\n{\nmsg.payload = 1;\n}\nelse\n{\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 360,
+        "wires": [
+            [
+                "4b6ccd98db4b2ecf"
+            ]
+        ]
+    },
+    {
+        "id": "4b6ccd98db4b2ecf",
+        "type": "rbe",
+        "z": "730b109011b4da6d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 670,
+        "y": 360,
+        "wires": [
+            [
+                "8295fb446e6c6ef8"
+            ]
+        ]
+    },
+    {
+        "id": "8295fb446e6c6ef8",
+        "type": "function",
+        "z": "730b109011b4da6d",
+        "name": "function 40",
+        "func": "var a = msg.payload\nif (a == 1)\n{\nmsg.payload = \"Critical water level reached\";\n}\nelse\n{\n    msg.payload = \"Critical water level reduced\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 360,
+        "wires": [
+            [
+                "970aef37fcf56ffe"
+            ]
+        ]
+    },
+    {
+        "id": "970aef37fcf56ffe",
+        "type": "ui_toast",
+        "z": "730b109011b4da6d",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Notification",
+        "x": 1030,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ccd8a4f32bf42ade",
+        "type": "function",
+        "z": "730b109011b4da6d",
+        "name": "function 41",
+        "func": "var a = msg.payload\nif (a>50)\n{\nmsg.payload = \"Water level is \" + a ;\n}\nelse {return}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 300,
+        "wires": [
+            [
+                "13177c3ae82eea30"
+            ]
+        ]
+    },
+    {
+        "id": "13177c3ae82eea30",
+        "type": "ui_text_input",
+        "z": "730b109011b4da6d",
+        "name": "Critical Alerts",
+        "label": "",
+        "tooltip": "",
+        "group": "c5c744217da49876",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1030,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a737d82400320f9",
+        "type": "function",
+        "z": "730b109011b4da6d",
+        "name": "function 42",
+        "func": "var a = msg.payload\nif (a>500)\n{\n    msg.payload = \"Water velocity is \" + a ;\n}\nelse {return}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 520,
+        "wires": [
+            [
+                "1cef2d91cd39cc0d"
+            ]
+        ]
+    },
+    {
+        "id": "1cef2d91cd39cc0d",
+        "type": "ui_text_input",
+        "z": "730b109011b4da6d",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "c5c744217da49876",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1060,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9a38f487cf23083",
+        "type": "function",
+        "z": "730b109011b4da6d",
+        "name": "function 43",
+        "func": "var a = msg.payload\nif (a>1000)\n{\n    msg.payload = \"Water flow is \" + a ;\n}\nelse {return}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 600,
+        "wires": [
+            [
+                "1bb7a11842a4ab67"
+            ]
+        ]
+    },
+    {
+        "id": "1bb7a11842a4ab67",
+        "type": "ui_text_input",
+        "z": "730b109011b4da6d",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "c5c744217da49876",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1060,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "00f3fa24f5f33477",
+        "type": "inject",
+        "z": "730b109011b4da6d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 520,
+        "wires": [
+            [
+                "e7143e2961512e10"
+            ]
+        ]
+    },
+    {
+        "id": "e7143e2961512e10",
+        "type": "random",
+        "z": "730b109011b4da6d",
+        "name": "Water Velocity",
+        "low": "100",
+        "high": "1000",
+        "inte": "true",
+        "property": "payload",
+        "x": 520,
+        "y": 520,
+        "wires": [
+            [
+                "1b17bca21bea07c5"
+            ]
+        ]
+    },
+    {
+        "id": "be707e2b12927666",
+        "type": "inject",
+        "z": "730b109011b4da6d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 600,
+        "wires": [
+            [
+                "e7851dcb00944e53"
+            ]
+        ]
+    },
+    {
+        "id": "e7851dcb00944e53",
+        "type": "random",
+        "z": "730b109011b4da6d",
+        "name": "Water Flow",
+        "low": "500",
+        "high": "1500",
+        "inte": "true",
+        "property": "payload",
+        "x": 490,
+        "y": 600,
+        "wires": [
+            [
+                "7356d7afcf7de853"
+            ]
+        ]
+    },
+    {
+        "id": "11349542d3ac1f85",
+        "type": "inject",
+        "z": "730b109011b4da6d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "64eecc47171b534d"
+            ]
+        ]
+    },
+    {
+        "id": "64eecc47171b534d",
+        "type": "random",
+        "z": "730b109011b4da6d",
+        "name": "Water Level",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "7b8ebc5b960d5f51"
+            ]
+        ]
+    },
+    {
+        "id": "a2333946168a1752",
+        "type": "ui_text",
+        "z": "730b109011b4da6d",
+        "group": "c5c744217da49876",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "Critical Alerts",
+        "label": "Critical Alarms",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 650,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5a1465de9fd045c0",
+        "type": "ui_text",
+        "z": "730b109011b4da6d",
+        "group": "c5c744217da49876",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "Location",
+        "label": "Location: Data Logger -1, Nuclear site",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 360,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "26dd59740e53db95",
+        "type": "ui_group",
+        "name": "Water Level",
+        "tab": "870bade6198ec127",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fb3a8fce250db418",
+        "type": "ui_group",
+        "name": "Water Velocity",
+        "tab": "870bade6198ec127",
+        "order": 4,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7d78b447a13eca56",
+        "type": "ui_group",
+        "name": "Water Flow",
+        "tab": "870bade6198ec127",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c5c744217da49876",
+        "type": "ui_group",
+        "name": "Critical Alarms",
+        "tab": "870bade6198ec127",
+        "order": 1,
+        "disp": false,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "870bade6198ec127",
+        "type": "ui_tab",
+        "name": "Environmental Monitoring",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
