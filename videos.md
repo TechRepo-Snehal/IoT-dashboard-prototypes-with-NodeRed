@@ -4,7 +4,7 @@
 - Understanding Node-RED (https://www.youtube.com/watch?v=raV5NFInPio)
 - NodeRed Basics (https://www.youtube.com/watch?v=pVb6Vq84ovg&t=2s)
 
-## 🧑‍💻 Node-RED Setup
+## ⚙️ Node-RED Setup
 - [Install Node-RED on Windows/Mac/Linux](https://www.youtube.com/watch?v=N-pmFf0vLHg)
 - [Node-RED Basics Tutorial](https://www.youtube.com/watch?v=ksGeUDGI3dk)
 
