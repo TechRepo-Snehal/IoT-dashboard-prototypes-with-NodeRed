@@ -26,8 +26,7 @@ You will learn how to develop quick working IoT dashboard prototypes with minima
 | `flows/` folder | JSON flows for import into your Node-RED instance |
 | `videos.md` | Links to helpful YouTube videos to get started |
 | `blogs.md` | Curated technical blogs for learning Node-RED and Datacake |
-| `datacake-guide.md` | How to send Node-RED data into Datacake |
-| `screenshots/` | Example dashboards & flow visuals |
+| `screenshots/` | Deck with Example dashboards & flow visuals |
 
 ---
 
