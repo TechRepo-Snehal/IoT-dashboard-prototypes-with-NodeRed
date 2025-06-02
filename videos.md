@@ -15,4 +15,4 @@
 - [Creating IoT Dashboards](https://www.youtube.com/watch?v=ksGeUDGI3dk&t=407s)
 
 ## 🌐 DataCake Integration
-- [Send Node-RED Data to Datacake via HTTP](https://www.youtube.com/watch?v=fpgZ1ZBMhAE)
+- [Send Node-RED Data to Datacake](https://www.youtube.com/watch?v=fpgZ1ZBMhAE](https://www.youtube.com/watch?v=oB0hnnenVpQ)
