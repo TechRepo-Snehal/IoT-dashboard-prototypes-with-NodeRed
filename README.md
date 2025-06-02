@@ -6,6 +6,7 @@ Welcome! This repository helps presales engineers and solution consultants quick
 
 💡 **Why This?**  
 In early presales discussions, static slides often fail to convey the *real value* of IoT. A working prototype — even with simulated data — can dramatically improve customer conversations.
+
 ---
 
 ## 🎯 What You'll Achieve
