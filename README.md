@@ -11,6 +11,7 @@ In early presales discussions, static slides often fail to convey the *real valu
 
 ## 🎯 What You'll Achieve
 You will learn how to develop quick working IoT dashboard prototypes with minimal efforts using NodeRed that allows to:
+
 ✅ Simulate IoT sensor data (e.g., temperature, humidity)  
 ✅ Trigger real-time alerts & alarms  
 ✅ Visualize everything on interactive dashboards  
