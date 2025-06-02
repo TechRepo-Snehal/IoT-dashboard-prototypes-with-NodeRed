@@ -8,11 +8,8 @@
 - [Install Node-RED on Windows/Mac/Linux](https://www.youtube.com/watch?v=N-pmFf0vLHg)
 - [Node-RED Basics Tutorial](https://www.youtube.com/watch?v=ksGeUDGI3dk)
 
-## 🧪 Simulating Sensor Data
-- [Using Inject + Random + Function Nodes](https://www.youtube.com/watch?v=J7PeGyP5jLQ)
-
 ## 📊 Node-RED Dashboards
-- [Creating IoT Dashboards](https://www.youtube.com/watch?v=ksGeUDGI3dk&t=407s)
+- Creating IoT Dashboards (https://www.youtube.com/watch?v=wX1_6W2GmNI)
 
 ## 🌐 DataCake Integration
-- [Send Node-RED Data to Datacake](https://www.youtube.com/watch?v=fpgZ1ZBMhAE](https://www.youtube.com/watch?v=oB0hnnenVpQ)
+- Send Node-RED Data to Datacake(https://www.youtube.com/watch?v=oB0hnnenVpQ)
