@@ -47,6 +47,7 @@ You will learn how to develop quick working IoT dashboard prototypes with minima
 ### 3️⃣ Simulate Data
 - Use `inject` + `random` nodes to simulate sensor values
 - Explore charts, alerts, and dashboards!
+- You can also use this webapp to simulate the sensor data (Repo link - https://tinyurl.com/3x9ruceu)
 
 ---
 
