@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer on Global IoT Connectivity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --cubic-emerald: #00f0b5; 
+            --cubic-dark: #0a141a;    
+            --cubic-gray: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cubic-gray);
+            color: #1e293b;
+        }
+
+        .header-gradient {
+            background: linear-gradient(135deg, var(--cubic-dark) 0%, #162a35 100%);
+        }
+
+        .nav-item.active {
+            color: var(--cubic-emerald);
+            border-bottom: 2px solid var(--cubic-emerald);
+        }
+
+        .sim-layer:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(0, 240, 181, 0.4); }
+            100% { box-shadow: 0 0 0 20px rgba(0, 240, 181, 0); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--cubic-emerald); }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Header -->
+    <header class="header-gradient px-6 py-10 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 flex justify-center items-center pointer-events-none">
+            <i class="fas fa-cube text-[400px] text-white"></i>
+        </div>
+        
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="mb-4">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 5L10 27.5V72.5L50 95L90 72.5V27.5L50 5Z" stroke="#00f0b5" stroke-width="8" stroke-linejoin="round"/>
+                    <path d="M50 5V50L90 27.5M50 50L10 27.5M50 50L50 95" stroke="#00f0b5" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h1 class="text-4xl font-extrabold text-white tracking-tight">Primer on Global IoT Connectivity</h1>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 px-6 py-4 flex justify-center shadow-sm">
+        <div class="flex space-x-4 md:space-x-8 text-sm font-bold text-slate-500 overflow-x-auto whitespace-nowrap pb-2 md:pb-0">
+            <button onclick="showSection('intro')" class="nav-item active hover:text-emerald-500 transition pb-1">The Concept</button>
+            <button onclick="showSection('sim')" class="nav-item hover:text-emerald-500 transition pb-1">SIM Architecture</button>
+            <button onclick="showSection('rsp')" class="nav-item hover:text-emerald-500 transition pb-1">RSP Standards</button>
+            <button onclick="showSection('core')" class="nav-item hover:text-emerald-500 transition pb-1">Mobile Core</button>
+            <button onclick="showSection('cloud')" class="nav-item hover:text-emerald-500 transition pb-1">Cloud Platform</button>
+            <button onclick="showSection('lifecycle')" class="nav-item hover:text-emerald-500 transition pb-1">End-to-End Lifecycle</button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto py-12 px-6">
+        
+        <!-- SECTION: INTRO -->
+        <section id="section-intro" class="section-content fade-in">
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Global IoT Connectivity <span class="text-emerald-500 text-4xl block mt-2">isn't just about a SIM card.</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        One must view the global IoT connectivity as a <strong>multi-layered software stack</strong> rather than a hardware commodity. True reliability in IoT is achieved through the orchestration of silicon, secure operating systems, and cloud-based management that governs a device's entire lifecycle across borders.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-2 bg-emerald-100 rounded text-emerald-600"><i class="fas fa-check-circle"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Software-Defined Connectivity</h4>
+                                <p class="text-sm text-slate-500">Treating connectivity as code enables autonomous network switching and logic updates without physical intervention.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="p-2 bg-slate-100 rounded text-slate-600"><i class="fas fa-globe"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Global Agnosticism</h4>
+                                <p class="text-sm text-slate-500">Eliminating carrier lock-in through eUICC technology, ensuring devices remain connected anywhere in the world.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
+                    <h3 class="text-xl font-bold mb-6 text-slate-800 border-b pb-2">Global IoT Connectivity Stack</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 border-l-4 border-emerald-500 bg-emerald-50 rounded-r">
+                            <span class="text-xs font-bold text-emerald-600 uppercase">Layer 4</span>
+                            <p class="font-bold">Cubic Cloud Platform</p>
+                        </div>
+                        <div class="p-4 border-l-4 border-slate-400 bg-slate-50 rounded-r">
+                            <span class="text-xs font-bold text-slate-500 uppercase">Layer 3</span>
+                            <p class="font-bold">Mobile Core Network</p>
+                        </div>
+                        <div class="p-4 border-l-4 border-slate-400 bg-slate-50 rounded-r">
+                            <span class="text-xs font-bold text-slate-500 uppercase">Layer 2</span>
+                            <p class="font-bold">RSP Infrastructure (SGP.02, SGP.32)</p>
+                        </div>
+                        <div class="p-4 border-l-4 border-slate-900 bg-slate-900 text-white rounded-r">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Layer 1</span>
+                            <p class="font-bold">eUICC Hardware & OS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW SUB-SECTION: THE TCU FOUNDATION -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full -mr-32 -mt-32 opacity-50"></div>
+                <div class="relative z-10 grid lg:grid-cols-3 gap-8 items-start">
+                    <div class="lg:col-span-2">
+                        <h3 class="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                            <span class="w-10 h-10 bg-slate-900 text-emerald-400 rounded-lg flex items-center justify-center mr-4 shadow-lg">
+                                <i class="fas fa-microchip"></i>
+                            </span>
+                            The Foundation: The TCU
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Before we look at the software, we must understand the hardware that makes it possible. In every connected asset—like a modern car—there is a specialized computer called the <strong>Telematics Control Unit (TCU)</strong>. 
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-slate-800 mb-2">What is it?</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed">Think of the TCU as the "Smartphone" of the vehicle. It is a powerful onboard computer designed to communicate with the outside world.</p>
+                            </div>
+                            <div class="p-5 bg-emerald-50 rounded-2xl border border-emerald-100">
+                                <h4 class="font-bold text-emerald-700 mb-2">Why is it critical?</h4>
+                                <p class="text-sm text-emerald-600 leading-relaxed">It is inside this secure box where the <strong>eUICC (Embedded SIM)</strong> is physically soldered, ensuring it can never be removed or tampered with.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl p-6 text-white shadow-2xl self-center">
+                        <h4 class="text-emerald-400 font-bold mb-4 uppercase text-xs tracking-widest">Layman's View</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-shield-alt text-emerald-500 mt-1"></i>
+                                <p class="text-sm opacity-90"><strong>Ruggedized:</strong> Built to withstand engine heat and extreme cold.</p>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-wifi text-emerald-500 mt-1"></i>
+                                <p class="text-sm opacity-90"><strong>Connected:</strong> Contains antennas for GPS, 4G, 5G, and Bluetooth.</p>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-lock text-emerald-500 mt-1"></i>
+                                <p class="text-sm opacity-90"><strong>Secure:</strong> The eUICC inside acts as the "Passport" for the TCU to join networks globally.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SIM ARCHITECTURE -->
+        <section id="section-sim" class="section-content hidden space-y-12 fade-in">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900">Inside the eUICC</h2>
+                <p class="text-slate-500 italic">"Think of it as a miniature secure computer, not just a storage chip."</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="flex flex-col space-y-2 py-8">
+                    <div onclick="inspectSim('profile')" class="sim-layer cursor-pointer p-6 bg-emerald-500 text-white rounded-t-3xl shadow-lg border-b-2 border-emerald-600 transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg uppercase tracking-wider">SIM Profiles</span>
+                            <i class="fas fa-sim-card"></i>
+                        </div>
+                    </div>
+                    <div onclick="inspectSim('applets')" class="sim-layer cursor-pointer p-6 bg-slate-700 text-white shadow-lg border-b-2 border-slate-800 transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg uppercase tracking-wider">SIM Applets</span>
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                    </div>
+                    <div onclick="inspectSim('os')" class="sim-layer cursor-pointer p-6 bg-slate-800 text-white shadow-lg border-b-2 border-slate-950 transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg uppercase tracking-wider">SIM OS</span>
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                    </div>
+                    <div onclick="inspectSim('euicc')" class="sim-layer cursor-pointer p-6 bg-slate-200 text-slate-800 rounded-b-3xl shadow-lg transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg uppercase tracking-wider">eUICC (Hardware)</span>
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sim-inspector" class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center min-h-[400px]">
+                    <div id="inspector-default">
+                        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4 text-slate-400 mx-auto">
+                            <i class="fas fa-mouse-pointer text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-center">Component Inspector</h3>
+                        <p class="text-slate-500 text-center">Select a layer of the SIM architecture to understand its role.</p>
+                    </div>
+                    <div id="inspector-detail" class="hidden">
+                        <h3 id="inspect-title" class="text-2xl font-bold mb-2 text-emerald-600">Component Name</h3>
+                        <p id="inspect-desc" class="text-slate-600 leading-relaxed mb-6">Description goes here.</p>
+                        <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-100">
+                            <h4 id="inspect-meta-title" class="text-xs font-bold uppercase text-emerald-600 mb-2">Key Understanding:</h4>
+                            <p id="inspect-sales" class="text-sm text-slate-700 font-medium italic"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: RSP STANDARDS -->
+        <section id="section-rsp" class="section-content hidden space-y-12 fade-in">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900">RSP Standards Evolution</h2>
+                <div class="mt-6 bg-emerald-900 text-white p-6 rounded-2xl text-left border-l-8 border-emerald-500 shadow-lg">
+                    <h4 class="font-bold mb-2 flex items-center"><i class="fas fa-history mr-2"></i> How did we get here?</h4>
+                    <p class="text-sm leading-relaxed opacity-90">
+                        In the early days of IoT, changing a network operator meant visiting a device and physically swapping a SIM card—impossible for a car or an underground meter. Manufacturers then created "Proprietary eUICC" solutions, but this led to **vendor lock-in**. To fix this, the **GSMA (Global Mobile Association)** introduced unified SGP (Subscriber Group Personalization) standards to ensure interoperability.
+                    </p>
+                    <p class="text-sm mt-3 font-medium text-emerald-300">
+                        RSP allows us to "digitize" the identity of a SIM, letting us send a new carrier profile over-the-air (OTA) to any device, anywhere.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800">SGP.02 (M2M)</h3>
+                        <span class="px-3 py-1 bg-amber-100 text-amber-600 rounded text-xs font-bold uppercase">Push Model</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">The original standard for machines. It is complex because the <strong>network</strong> must initiate the change. Best suited for industrial assets with fixed power supplies.</p>
+                    <div class="space-y-3 mt-4">
+                        <div class="p-3 bg-slate-50 rounded text-xs border-l-4 border-amber-400">
+                            <strong>SM-DP:</strong> The library where profiles are prepared and encrypted.
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded text-xs border-l-4 border-amber-400">
+                            <strong>SM-SR:</strong> The active router that "pushes" the profile to the device.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl border-2 border-emerald-500 shadow-xl relative">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900">SGP.32 (IoT)</h3>
+                        <span class="px-3 py-1 bg-emerald-100 text-emerald-600 rounded text-xs font-bold uppercase">Pull Model</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">The future of IoT. It uses a **"Consumer-like"** approach where the device itself "pulls" the profile. Much simpler for battery-powered or mass-deployment devices.</p>
+                    <div class="space-y-3 mt-4">
+                        <div class="p-3 bg-emerald-50 rounded text-xs border-l-4 border-emerald-500">
+                            <strong>SM-DP+:</strong> A modern server that wait for the device to request a profile.
+                        </div>
+                        <div class="p-3 bg-emerald-50 rounded text-xs border-l-4 border-emerald-500">
+                            <strong>eIM:</strong> The massive manager for your whole fleet of devices.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: MOBILE CORE NETWORK -->
+        <section id="section-core" class="section-content hidden space-y-8 fade-in">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900">Mobile Core Network</h2>
+                <p class="text-slate-500">The software intelligence that governs authentication and traffic security.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 flex items-center text-slate-800"><i class="fas fa-shield-virus mr-2 text-emerald-500"></i> Why the Core Matters</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            The Mobile Core Network is the heart of global connectivity. It doesn't just pass data; it acts as a gatekeeper that ensures only authorized devices connect. It translates radio signals from cell towers into secure sessions.
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            A robust core architecture allows traffic to reach its destination in a <strong>safe and secure manner</strong> through encrypted tunnels.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-inner">
+                        <h4 class="font-bold text-slate-800 mb-4 border-b border-slate-200 pb-2">Essential Core Network Elements</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3 text-sm">
+                                <span class="w-10 h-10 bg-slate-900 text-emerald-400 rounded flex items-center justify-center font-bold">HSS</span>
+                                <div><p class="font-bold">HSS / UDM</p><p class="text-xs text-slate-500">The "Identity Office" for authentication.</p></div>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm">
+                                <span class="w-10 h-10 bg-slate-900 text-emerald-400 rounded flex items-center justify-center font-bold">PGW</span>
+                                <div><p class="font-bold">PGW / UPF</p><p class="text-xs text-slate-500">The "Router" that allocates IP addresses.</p></div>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm">
+                                <span class="w-10 h-10 bg-slate-900 text-emerald-400 rounded flex items-center justify-center font-bold">PCF</span>
+                                <div><p class="font-bold">PCRF / PCF</p><p class="text-xs text-slate-500">The "Ruleset" that controls speed & limits.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CLOUD PLATFORM -->
+        <section id="section-cloud" class="section-content hidden space-y-8 fade-in">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900">Cloud Management Platform</h2>
+                <p class="text-slate-500">The orchestration layer that brings the entire connectivity stack to life.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-slate-900 text-emerald-500 rounded-xl flex items-center justify-center text-xl shadow-lg border border-emerald-500/30">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">The Brain of Global IoT Connectivity</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Think of the Cloud Platform as the central nervous system. While the SIM connects and the Core Network routes, the Cloud Platform <strong>decides</strong>. It is the command center that gives users visibility and control over millions of devices.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 grid md:grid-cols-2 gap-4">
+                        <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-emerald-200 transition">
+                            <h4 class="font-bold text-emerald-600 mb-2 text-sm uppercase">Global Visibility</h4>
+                            <p class="text-xs text-slate-500">Real-time mapping and diagnostics across 190+ countries in a single pane of glass.</p>
+                        </div>
+                        <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-emerald-200 transition">
+                            <h4 class="font-bold text-emerald-600 mb-2 text-sm uppercase">Automated Lifecycle</h4>
+                            <p class="text-xs text-slate-500">Rules-based profile swapping. If a car enters a new region, the platform triggers a local profile download automatically.</p>
+                        </div>
+                        <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-emerald-200 transition">
+                            <h4 class="font-bold text-emerald-600 mb-2 text-sm uppercase">Unified Billing</h4>
+                            <p class="text-xs text-slate-500">No more 50 carrier bills. One dashboard, one invoice, total transparency on data spend.</p>
+                        </div>
+                        <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-emerald-200 transition">
+                            <h4 class="font-bold text-emerald-600 mb-2 text-sm uppercase">Secure Logic</h4>
+                            <p class="text-xs text-slate-500">Set firewall rules at the cloud level. Ensure your IoT devices only talk to your trusted servers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LIFECYCLE USE CASE -->
+        <section id="section-lifecycle" class="section-content hidden space-y-12 fade-in">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900">End-to-End Lifecycle</h2>
+                <p class="text-slate-500 italic">A connected car journey.</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-slate-200 hidden md:block"></div>
+                
+                <div class="space-y-12 relative">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-1 text-right hidden md:block">
+                            <h4 class="font-bold text-emerald-500 text-lg">1. Silicon Manufacturing</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">The eUICC is manufactured with a <strong>Bootstrap Profile</strong> and soldered into the TCU.</p>
+                        </div>
+                        <div class="w-12 h-12 bg-slate-900 border-2 border-emerald-500 text-emerald-500 rounded-full flex items-center justify-center font-bold z-10 shadow-lg">1</div>
+                        <div class="flex-1 bg-emerald-50 p-6 rounded-xl border border-emerald-100 shadow-sm">
+                            <p class="text-sm text-slate-700 font-medium leading-relaxed">The <strong>Telematics Control Unit (TCU)</strong> is installed in the vehicle. It contains Layer 1 (eUICC Hardware) with a temporary factory profile.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-1 bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-md md:text-right text-white">
+                            <p class="text-sm font-medium leading-relaxed">The car wakes up. It connects to the <strong>Mobile Core</strong> via the bootstrap profile to verify hardware and download a destination-specific profile.</p>
+                        </div>
+                        <div class="w-12 h-12 bg-slate-900 border-2 border-slate-400 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">2</div>
+                        <div class="flex-1 hidden md:block">
+                            <h4 class="font-bold text-slate-800 text-lg uppercase tracking-tight">2. Initial Boot & Test</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed">Using <strong>RSP Infrastructure</strong>, the car receives its first "Operational Profile" based on where it will be sold.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-1 text-right hidden md:block">
+                            <h4 class="font-bold text-emerald-600 text-lg uppercase tracking-tight">3. Global Transit</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">The car is shipped to another country. It enters "Shipping Mode" to save battery but stays reachable.</p>
+                        </div>
+                        <div class="w-12 h-12 bg-slate-900 border-2 border-emerald-500 text-emerald-500 rounded-full flex items-center justify-center font-bold z-10 shadow-lg">3</div>
+                        <div class="flex-1 bg-emerald-50 p-6 rounded-xl border border-emerald-100 shadow-sm">
+                            <p class="text-sm text-slate-700 font-medium leading-relaxed">The <strong>Cloud Platform</strong> detects the car's location change via core network signaling and prepares a local profile swap if needed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-1 bg-slate-900 p-6 rounded-xl border border-slate-700 shadow-xl md:text-right text-white">
+                            <p class="text-sm font-medium leading-relaxed">The car is sold. High-speed data is activated via the <strong>Mobile Core PGW</strong>, allowing the driver to browse and use maps securely.</p>
+                        </div>
+                        <div class="w-12 h-12 bg-emerald-500 text-slate-900 rounded-full flex items-center justify-center font-bold z-10 shadow-lg pulse"><i class="fas fa-car"></i></div>
+                        <div class="flex-1 hidden md:block">
+                            <h4 class="font-bold text-emerald-500 text-lg uppercase tracking-tight">4. Live Operation</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed">The "End-to-End" stack ensures the driver has high-speed, secure internet for the life of the vehicle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="header-gradient mt-20 py-12 px-6 text-white border-t border-white/10">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex flex-col items-center md:items-start space-y-4">
+                <div class="flex items-center space-x-2">
+                     <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5L10 27.5V72.5L50 95L90 72.5V27.5L50 5Z" stroke="#00f0b5" stroke-width="8" stroke-linejoin="round"/>
+                    </svg>
+                    <p class="text-slate-200 font-semibold tracking-wide">Primer on Global IoT Connectivity</p>
+                </div>
+                <p class="text-slate-400 text-sm">&copy; 2026. All technical rights reserved.</p>
+            </div>
+            
+            <div class="mt-8 md:mt-0 text-center md:text-right">
+                <div class="bg-white/5 border border-white/10 rounded-lg px-6 py-3 inline-block">
+                    <p class="text-emerald-400 text-sm font-medium">Crafted by Snehal Bhavsar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const simData = {
+            'profile': {
+                title: 'SIM Profiles',
+                desc: 'A SIM Profile is a virtual file containing network keys and identity (IMSI). It makes the eUICC act like a physical SIM card for a specific carrier.',
+                meta: 'Strategic Value:',
+                sales: 'We can hold multiple global identities on one chip, ensuring the device is never locked into a single expensive network.'
+            },
+            'applets': {
+                title: 'SIM Applets',
+                desc: 'Mini-software running on the SIM. They handle "Steering of Roaming" logic, telling the SIM which network to prefer in a foreign country.',
+                meta: 'Strategic Value:',
+                sales: 'This is where intelligence lives. We can update network preference logic over-the-air to optimize costs.'
+            },
+            'os': {
+                title: 'SIM OS',
+                desc: 'The secure operating system (like Java Card) that protects the authentication keys from physical or digital hacking.',
+                meta: 'Strategic Value:',
+                sales: 'Provides bank-grade security for the vehicle, preventing unauthorized access to the network signaling.'
+            },
+            'euicc': {
+                title: 'eUICC (Hardware)',
+                desc: 'The physical, industrial-grade chip soldered into the device. It is designed to survive vibration, heat, and cold for 15+ years.',
+                meta: 'Strategic Value:',
+                sales: 'Built for automotive lifecycles. No plastic SIM slots to break or cards to be stolen/swapped by users.'
+            }
+        };
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section-content').forEach(s => s.classList.add('hidden'));
+            document.getElementById('section-' + sectionId).classList.remove('hidden');
+            
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                if(item.textContent.toLowerCase().includes(sectionId.substring(0,3))) {
+                    item.classList.add('active');
+                }
+            });
+            window.scrollTo(0,0);
+        }
+
+        function inspectSim(part) {
+            const data = simData[part];
+            document.getElementById('inspector-default').classList.add('hidden');
+            document.getElementById('inspector-detail').classList.remove('hidden');
+            
+            document.getElementById('inspect-title').textContent = data.title;
+            document.getElementById('inspect-desc').textContent = data.desc;
+            document.getElementById('inspect-meta-title').textContent = data.meta;
+            document.getElementById('inspect-sales').textContent = data.sales;
+
+            document.querySelectorAll('.sim-layer').forEach(el => el.classList.remove('ring-4', 'ring-emerald-400'));
+            event.currentTarget.classList.add('ring-4', 'ring-emerald-400');
+        }
+    </script>
+</body>
+</html>
